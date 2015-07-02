@@ -8,3 +8,7 @@ store_frontend_statics:
     resource: "@StoreFrontendBundle/Resources/config/routing/statics.yml"
     prefix:   /
 
+# Jeu de route product
+store_frontend_product:
+    resource: "@StoreFrontendBundle/Resources/config/routing/product.yml"
+    prefix:   /product

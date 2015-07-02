@@ -13,6 +13,16 @@
         {% endfor %}
     </div>
 
+    <div>
+        {% for category in categories %}
+            <p>{{ category.title }}</p>
+            <p>{{ category.description }}</p>
+        {% else %}
+            <div class="alert alert-danger">
+                Attention il n'y a pas de categoris</div>
+        {% endfor %}
+    </div>
+
 
 
 {% endblock %}

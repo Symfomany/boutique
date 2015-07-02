@@ -1,0 +1,3 @@
+store_frontend_product_new:
+    path:     /new
+    defaults: { _controller: StoreFrontendBundle:Product:new }

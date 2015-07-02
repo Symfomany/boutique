@@ -33,7 +33,7 @@ class MainController extends Controller
             ->getProductHomepage();
 
         $categories = $em->getRepository('StoreFrontendBundle:Category')
-            ->findAll();
+            ->getCategoryHomepage();
 
 
         return $this->render('StoreFrontendBundle:Main:homepage.html.twig',

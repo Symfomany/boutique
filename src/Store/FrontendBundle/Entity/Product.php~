@@ -1,0 +1,78 @@
+<?php
+
+namespace Store\FrontendBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Product
+ *
+ * @ORM\Table(name="product", uniqueConstraints={@ORM\UniqueConstraint(name="uk_product_id", columns={"id"}), @ORM\UniqueConstraint(name="uk_product_title", columns={"title"})}, indexes={@ORM\Index(name="new_foreign_key_421874400675231", columns={"category_id"})})
+ * @ORM\Entity
+ */
+class Product
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="title", type="string", length=60, nullable=true)
+     */
+    private $title;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text", nullable=false)
+     */
+    private $description;
+
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(name="visible", type="boolean", nullable=false)
+     */
+    private $visible;
+
+    /**
+     * @var \Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="category_id", referencedColumnName="id")
+     * })
+     */
+    private $category;
+
+    /**
+     * @var \Doctrine\Common\Collections\Collection
+     *
+     * @ORM\ManyToMany(targetEntity="Tag", inversedBy="product")
+     * @ORM\JoinTable(name="product_tag",
+     *   joinColumns={
+     *     @ORM\JoinColumn(name="product_id", referencedColumnName="id")
+     *   },
+     *   inverseJoinColumns={
+     *     @ORM\JoinColumn(name="tag_id", referencedColumnName="id")
+     *   }
+     * )
+     */
+    private $tag;
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tag = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+}

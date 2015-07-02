@@ -1,0 +1,12 @@
+
+store_frontend_concept:
+    path:     /concept
+    defaults: { _controller: StoreFrontendBundle:Statics:concept }
+
+store_frontend_contact:
+    path:     /contact
+    defaults: { _controller: StoreFrontendBundle:Statics:contact }
+
+store_frontend_mention:
+    path:     /mention
+    defaults: { _controller: StoreFrontendBundle:Statics:mention }

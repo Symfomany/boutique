@@ -1,0 +1,47 @@
+{% extends "StoreFrontendBundle::layout.html.twig" %}
+
+{% block content %}
+    <h1>Boutique en ligne</h1>
+
+    <div>
+        {% for category in categories %}
+            <h4>{{ category.title }}</h4>
+            <p>{{ category.description }}</p>
+        {% else %}
+            <div class="alert alert-danger">
+                Attention il n'y a pas de catégorie</div>
+        {% endfor %}
+    </div>
+
+    <div>
+        {% for product in products %}
+            <h4>{{ product.title }}</h4>
+            <p>{{ product.description }}</p>
+        {% else %}
+            <div class="alert alert-danger">
+                Attention il n'y a pas de produit</div>
+        {% endfor %}
+    </div>
+
+    <h3>{{ product.description }}</h3>
+    <ul>
+        {% if title is defined and title is not empty %}
+            {{ title }}
+        {% else %}
+            <li>Aucun titre pour le moment</li>
+        {% endif %}
+        <li>{{ description }}</li>
+        <li>{{ keywords }}</li>
+        <li>{{ today|date('d/m/Y H:i') }}</li>
+        <ul>
+            {% set tags = {'name': "Beaux", 'fullname': "Jean-Christophe Beaux"} %}
+            {% for tag in tags %}
+                <li>{{ tag }}</li>
+            {% else %}
+                Aucun tag de trouvé.
+            {% endfor %}
+        </ul>
+    </ul>
+
+
+{% endblock %}

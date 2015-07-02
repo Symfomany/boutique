@@ -1,0 +1,68 @@
+Product:
+    type: entity
+    table: product
+    indexes:
+        new_foreign_key_421874400675231:
+            columns:
+                - category_id
+    uniqueConstraints:
+        uk_product_id:
+            columns:
+                - id
+        uk_product_title:
+            columns:
+                - title
+    id:
+        id:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        title:
+            type: string
+            nullable: true
+            length: 60
+            fixed: false
+            comment: ''
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        visible:
+            type: boolean
+            nullable: false
+            comment: ''
+    manyToOne:
+        category:
+            targetEntity: Category
+            cascade: {  }
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                category_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    manyToMany:
+        tag:
+            targetEntity: Tag
+            cascade: {  }
+            mappedBy: null
+            inversedBy: product
+            joinTable:
+                name: product_tag
+                joinColumns:
+                    -
+                        name: product_id
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    -
+                        name: tag_id
+                        referencedColumnName: id
+            orderBy: null
+    lifecycleCallbacks: {  }

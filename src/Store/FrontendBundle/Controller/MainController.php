@@ -1,0 +1,52 @@
+<?php
+
+namespace Store\FrontendBundle\Controller;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+
+/**
+ * Class MainController
+ * @package Store\FrontendBundle\Controller
+ */
+class MainController extends Controller
+{
+    /**
+     * julien@meetserious.com
+     * Page d'accueil
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function homepageAction()
+    {
+        //Je recupere le Manager d'Entités de Doctrine
+        $em = $this->getDoctrine()->getManager();
+
+        //Je récupère 1 seul produit âr son ID de ma table product
+        $product = $em->getRepository('StoreFrontendBundle:Product')
+            ->find(1);
+
+        //Je récupère tous les produits visibles
+        $products = $em->getRepository('StoreFrontendBundle:Product')
+            ->findBy(array('visible' => 1));
+
+        //same thing
+        $products = $em->getRepository('StoreFrontendBundle:Product')
+            ->findByVisible(1);
+
+        $categories = $em->getRepository('StoreFrontendBundle:Category')
+            ->findAll();
+
+
+        return $this->render('StoreFrontendBundle:Main:homepage.html.twig',
+            [
+                "categories" => $categories,
+                "product" => $product,
+                "products" => $products,
+                "title" => "Boutique en ligne de bijoux",
+                "description" => "Boutique de Bijoux",
+                "keywords" => "boutique,bijoux,createurs",
+                "today" => new \DateTime('now'),
+                "tags" => ["Bijoux-Fantaisies", "Bijoux-Créateurs", "Bijoux-Fait-Main"]
+            ]
+        );
+    }
+}

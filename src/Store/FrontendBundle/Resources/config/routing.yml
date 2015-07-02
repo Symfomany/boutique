@@ -1,0 +1,10 @@
+
+store_frontend_homepage:
+    path:     /homepage
+    defaults: { _controller: StoreFrontendBundle:Main:homepage }
+
+#Jeu de route statics
+store_frontend_statics:
+    resource: "@StoreFrontendBundle/Resources/config/routing/statics.yml"
+    prefix:   /
+

@@ -27,16 +27,10 @@ class MainController extends Controller
         $category = $em->getRepository('StoreFrontendBundle:Category')
             ->find(1);
 
-        exit(dump($category->getProduct()));
-
 
         //Je récupère tous les produits visibles
         $products = $em->getRepository('StoreFrontendBundle:Product')
-            ->findBy(array('visible' => 1));
-
-        //same thing
-        $products = $em->getRepository('StoreFrontendBundle:Product')
-            ->findByVisible(1);
+            ->getProductHomepage();
 
         $categories = $em->getRepository('StoreFrontendBundle:Category')
             ->findAll();

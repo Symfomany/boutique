@@ -67,6 +67,14 @@ class Product
      */
     private $tag;
 
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=false)
+     */
+    private $created;
+
     /**
      * Constructor
      */

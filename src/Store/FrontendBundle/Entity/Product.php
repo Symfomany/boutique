@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
  * Product
  *
  * @ORM\Table(name="product", uniqueConstraints={@ORM\UniqueConstraint(name="uk_product_id", columns={"id"}), @ORM\UniqueConstraint(name="uk_product_title", columns={"title"})}, indexes={@ORM\Index(name="new_foreign_key_421874400675231", columns={"category_id"})})
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Store\FrontendBundle\Repository\ProductRepository")
  */
 class Product
 {
@@ -66,6 +66,14 @@ class Product
      * )
      */
     private $tag;
+
+
+    /**
+     * @var
+     *
+     * @ORM\Column(name="created", type="datetime", nullable=false)
+     */
+    private $created;
 
     /**
      * Constructor
@@ -209,5 +217,28 @@ class Product
     public function getTag()
     {
         return $this->tag;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Product
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
     }
 }

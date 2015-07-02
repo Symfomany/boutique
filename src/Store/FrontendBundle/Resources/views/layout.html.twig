@@ -13,13 +13,11 @@
 {% endblock %}
 
 {% block body %}
+    <div style="padding-top:70px"></div>
     <h1>Boutique de Bijoux</h1>
 
     {# Inclus la vue partiel nav#}
     {{ include('StoreFrontendBundle:Main:_navbar.html.twig') }}
-
-    {{ include('StoreFrontendBundle:Main:_footer.html.twig') }}
-
 
     {% block content %}
     {% endblock %}

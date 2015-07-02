@@ -23,6 +23,12 @@ class MainController extends Controller
         //Je récupère 1 seul produit âr son ID de ma table product
         $product = $em->getRepository('StoreFrontendBundle:Product')
             ->find(1);
+        //Je récupère 1 seul produit âr son ID de ma table product
+        $category = $em->getRepository('StoreFrontendBundle:Category')
+            ->find(1);
+
+        exit(dump($category->getProduct()));
+
 
         //Je récupère tous les produits visibles
         $products = $em->getRepository('StoreFrontendBundle:Product')

@@ -2,6 +2,14 @@
 
 {% block content %}
     <h1>Boutique en ligne</h1>
+    <p>Catégory: {{ product.category.title }}</p>
+    <p>Tags:
+    <ul>
+        {% for tag in product.tag %}
+            <li>{{ tag.word }}</li>
+        {% endfor %}
+    </ul>
+    </p>
 
     <div>
         {% for category in categories %}

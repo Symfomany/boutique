@@ -36,6 +36,11 @@ class Category
     private $description;
 
 
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     */
+    private $product;
+
 
     /**
      * Get id
@@ -91,5 +96,45 @@ class Category
     public function getDescription()
     {
         return $this->description;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->product = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add product
+     *
+     * @param \Store\FrontendBundle\Entity\Product $product
+     * @return Category
+     */
+    public function addProduct(\Store\FrontendBundle\Entity\Product $product)
+    {
+        $this->product[] = $product;
+
+        return $this;
+    }
+
+    /**
+     * Remove product
+     *
+     * @param \Store\FrontendBundle\Entity\Product $product
+     */
+    public function removeProduct(\Store\FrontendBundle\Entity\Product $product)
+    {
+        $this->product->removeElement($product);
+    }
+
+    /**
+     * Get product
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProduct()
+    {
+        return $this->product;
     }
 }

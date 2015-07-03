@@ -1,3 +1,13 @@
 store_frontend_product_new:
     path:     /new
     defaults: { _controller: StoreFrontendBundle:Product:new }
+
+
+store_frontend_product_edit:
+    path:     /edit/{id}
+    defaults: { _controller: StoreFrontendBundle:Product:edit }
+
+
+store_frontend_product_remove:
+    path:     /remove/{id}
+    defaults: { _controller: StoreFrontendBundle:Product:remove }

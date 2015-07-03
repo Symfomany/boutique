@@ -19,7 +19,7 @@ class ProductRepository extends EntityRepository
 
     return $this->getEntityManager()
         ->createQuery(
-        'SELECT  p.title, p.description, c.title AS  cat
+        'SELECT  p.id, p.title, p.description, c.title AS  cat
           FROM StoreFrontendBundle:Product p
           JOIN p.category c
           WHERE p.visible = :visible

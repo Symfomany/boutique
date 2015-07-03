@@ -62,6 +62,12 @@ class ProductController extends Controller
         //si mon formulaire
         if($form->isValid()){
 
+            //créer un message flash
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Votre produit a bien été edité'
+            );
+
             $em->persist($product);
             $em->flush();
 
@@ -103,6 +109,11 @@ class ProductController extends Controller
             $em->persist($product);
             $em->flush();
 
+            //créer un message flash
+            $this->get('session')->getFlashBag()->add(
+                'notice',
+                'Votre produit a bien été crée'
+            );
             return $this->redirectToRoute('store_frontend_homepage');
         }
 

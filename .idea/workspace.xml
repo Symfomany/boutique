@@ -35,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProductController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Controller/ProductController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.083334" vertical-offset="370" max-vertical-offset="3321">
-              <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.36072424" vertical-offset="2819" max-vertical-offset="3618">
+              <caret line="114" column="46" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
               <folding>
                 <element signature="e#50#90#0#PHP" expanded="true" />
               </folding>
@@ -47,10 +47,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4303621" vertical-offset="307" max-vertical-offset="1288">
+            <state vertical-scroll-proportion="-12.875" vertical-offset="307" max-vertical-offset="1288">
               <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding />
             </state>
@@ -145,8 +145,8 @@
         <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/Product/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Resources/config/routing/product.yml" />
         <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/Main/homepage.html.twig" />
-        <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Controller/ProductController.php" />
         <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/layout.html.twig" />
+        <option value="$PROJECT_DIR$/src/Store/FrontendBundle/Controller/ProductController.php" />
       </list>
     </option>
   </component>
@@ -912,21 +912,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Controller/ProductController.php">
+    <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/layout.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.083334" vertical-offset="370" max-vertical-offset="3321">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
-          <folding>
-            <element signature="e#50#90#0#PHP" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="-12.875" vertical-offset="307" max-vertical-offset="1288">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Resources/views/layout.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/Store/FrontendBundle/Controller/ProductController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4303621" vertical-offset="307" max-vertical-offset="1288">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding />
+        <state vertical-scroll-proportion="0.36072424" vertical-offset="2819" max-vertical-offset="3618">
+          <caret line="114" column="46" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
+          <folding>
+            <element signature="e#50#90#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -19,6 +19,14 @@
     {# Inclus la vue partiel nav#}
     {{ include('StoreFrontendBundle:Main:_navbar.html.twig') }}
 
+    {# Affiche les message flash contenu dan sle tableau des notice #}
+    {% for flashMessage in app.session.flashbag.get('notice') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+
     {% block content %}
     {% endblock %}
 {% endblock %}

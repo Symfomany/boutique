@@ -25,6 +25,12 @@ class ProductController extends Controller
         $em->remove($product);
         $em->flush();
 
+        //créer un message flash
+        $this->get('session')->getFlashBag()->add(
+            'notice',
+            'Votre produit a bien été supprimé'
+        );
+
         return $this->redirectToRoute('store_frontend_homepage');
     }
 

@@ -3,7 +3,7 @@
 namespace Store\FrontendBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * Product
  *
@@ -21,17 +21,28 @@ class Product
      */
     private $id;
 
+
     /**
      * @var string
-     *
-     * @ORM\Column(name="title", type="string", length=60, nullable=true)
+     * @Assert\NotBlank(
+     *     message = "Le titre ne doit pas etre vide"
+     * )
+     * @Assert\Length(
+     *      min = "5",
+     *      max = "300",
+     *      minMessage = "Votre titre doit faire au moins {{ limit }} caractères",
+     *      maxMessage = "Votre titre ne peut pas être plus long que {{ limit }} caractères"
+     * )
+     *   @ORM\Column(name="title", type="string", length=60, nullable=true)
      */
     private $title;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="description", type="text", nullable=false)
+     * @Assert\Regex(pattern="/[a-zA-Z0-9-_\. ]{10,}/",
+     *               message="La description est incorrecte"
+     *              )
+     *  @ORM\Column(name="description", type="text", nullable=false)
      */
     private $description;
 
@@ -54,7 +65,12 @@ class Product
 
     /**
      * @var \Doctrine\Common\Collections\Collection
-     *
+     * @Assert\Count(
+     *      min = "2",
+     *      max = "5",
+     *      minMessage = "Vous devez spécifier au moins {{ limit }} tags",
+     *      maxMessage = "Vous ne pouvez pas spécifier plus de {{ limit }} tag"
+     * )
      * @ORM\ManyToMany(targetEntity="Tag", inversedBy="product")
      * @ORM\JoinTable(name="product_tag",
      *   joinColumns={
@@ -241,4 +257,12 @@ class Product
     {
         return $this->created;
     }
+
+    /**
+     * @return string
+     */
+    public  function __toString(){
+        return $this->title;
+    }
+
 }
